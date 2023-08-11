@@ -1,6 +1,8 @@
 import api
+
 from pywebio.pin import *
 from pywebio.output import *
+
 from unidecode import unidecode
 
 # Funciones ayuda
@@ -52,13 +54,18 @@ def eliminar_materia(nombre):
 cursos = { "Primero": 1, "Segundo": 2, "Tercero": 3, "Cuarto": 4, "Quinto": 5 }
 cuatrimestres = { "Primero": 1, "Segundo": 2 }
 
-put_row([
-    put_select('curso', options = cursos.keys(), label = 'Curso'),
-    None,
-    put_select('cuatri', options = cuatrimestres.keys(), label = 'Cuatrimestre'),
-    None,
-    put_select('grupo', options = list(range(1, 6)), label = 'Grupo'),
-])
+def widgets():
+    put_row([
+        put_select('curso', options = cursos.keys(), label = 'Curso'),
+        None,
+        put_select('cuatri', options = cuatrimestres.keys(), label = 'Cuatrimestre'),
+        None,
+        put_select('grupo', options = list(range(1, 6)), label = 'Grupo'),
+    ])
+
+    pin_on_change('curso', refrescar_curso)
+    pin_on_change('cuatri', refrescar_cuatri)
+    pin_on_change('grupo', refrescar_grupo)
 
 # Display
 # ---
@@ -91,6 +98,6 @@ def render():
             put_table(materias)
         ])
 
-pin_on_change('curso', refrescar_curso, init_run = True)
-pin_on_change('cuatri', refrescar_cuatri)
-pin_on_change('grupo', refrescar_grupo)
+def run():
+    widgets()
+    refrescar_curso('Primero')
