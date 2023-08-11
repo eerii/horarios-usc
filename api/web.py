@@ -1,4 +1,4 @@
-import api
+import api.horarios as api
 
 from pywebio.pin import *
 from pywebio.output import *
@@ -9,17 +9,17 @@ from unidecode import unidecode
 # ---
 
 def materia(nombre: str):
-    l = api.lista_materias('materias.json') # datos precargados
+    l = api.lista_materias('static/materias.json') # datos precargados
     m = api.encontrar_materia(l, nombre)[0][0]
     return m
 
 def refrescar_curso(e):
     global horario
-    horario = api.horario_curso(cursos[e], cuatrimestres[pin.cuatri], pin.grupo, 'materias.json')
+    horario = api.horario_curso(cursos[e], cuatrimestres[pin.cuatri], pin.grupo, 'static/materias.json')
     render()
 def refrescar_cuatri(e):
     global horario
-    horario = api.horario_curso(cursos[pin.curso], cuatrimestres[e], pin.grupo, 'materias.json')
+    horario = api.horario_curso(cursos[pin.curso], cuatrimestres[e], pin.grupo, 'static/materias.json')
     render()
 def refrescar_grupo(e):
     global horario
@@ -74,7 +74,7 @@ def render():
     global horario
 
     with use_scope('buscar', clear = True):
-        materias = [ m.nombre for m in api.lista_materias('materias.json') if m.cuatrimestre == cuatrimestres[pin.cuatri] and not m.nombre in horario.materias ]
+        materias = [ m.nombre for m in api.lista_materias('static/materias.json') if m.cuatrimestre == cuatrimestres[pin.cuatri] and not m.nombre in horario.materias ]
 
         put_row([
             put_input('buscar', placeholder = 'Busca una materia', datalist = materias),
