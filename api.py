@@ -2,11 +2,11 @@
 
 from dataclasses import dataclass, field, asdict
 from enum import Enum
-from pprint import pprint
 
 import datetime as dt
 import re
 from rapidfuzz import fuzz
+from colorsys import hsv_to_rgb
 
 import pandas as pd
 
@@ -60,6 +60,11 @@ class Materia:
     tipo: TipoMateria
     horario: list[HoraClase] = field(default_factory=list)
     examenes: list[Examen] = field(default_factory=list)
+    
+@dataclass
+class Horario:
+    df: pd.DataFrame
+    materias: list[(Materia, int)] = field(default_factory=list)
 
 # Obtener y procesar la lista de materias desde la web de la USC
 # ---
@@ -184,10 +189,10 @@ def iniciar_horario():
     horas = pd.date_range(start = '09:00', end = '20:00',freq = '30min').strftime('%H:%M')
     dias = [d.value for d in DiaSemana]
 
-    return pd.DataFrame(index=horas, columns=dias)
+    return Horario(pd.DataFrame(index=horas, columns=dias), [])
 
 # Añade una materia al horario especificado en el grupo indicado
-def horario_materia(horario: pd.DataFrame, materia: Materia, grupo: int):
+def horario_materia(horario: Horario, materia: Materia, grupo: int):
     for h in materia.horario:
         if h.grupo != grupo and h.tipo == TipoClase.INTERACTIVA:
             continue
@@ -199,9 +204,9 @@ def horario_materia(horario: pd.DataFrame, materia: Materia, grupo: int):
         # Comprobar conflictos
         conflicto = False
         for hora in r:
-            m = horario.loc[hora.strftime('%H:%M'), h.dia_semana.value]
+            m = horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]
             if not pd.isna(m):
-                mm = f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}";
+                mm = f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}"
                 if m == mm:
                     continue
                 if not conflicto:
@@ -209,11 +214,12 @@ def horario_materia(horario: pd.DataFrame, materia: Materia, grupo: int):
                 conflicto = True
 
         for hora in r:
-            m = set(str(horario.loc[hora.strftime('%H:%M'), h.dia_semana.value]).split(' / '))
+            m = set(str(horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]).split(' / '))
             m.add(f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}")
             m = list(filter(lambda x: x != 'nan', m))
-            horario.loc[hora.strftime('%H:%M'), h.dia_semana.value] = ' / '.join(sorted(m))
+            horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value] = ' / '.join(sorted(m))
         
+    horario.materias += [(materia, grupo)]
     return horario
 
 # Crea un horario del curso indicado
@@ -228,3 +234,37 @@ def horario_curso(curso: int, semestre: int, grupo: int, url_base=url_base, grad
         horario_materia(horario, m, grupo)
 
     return horario
+
+# Formatear horario con colores y estilo
+def formato_horario(horario: Horario):
+    u = horario.df.stack()
+    u = filter(lambda x: x != '' and not '/' in x, u)
+    u = map(lambda x: x.split(' ')[0], u)
+    u = set(u)
+    color = lambda i, t: hsv_to_rgb((i + 1) / (t + 1), 0.4, 1.0)
+    to_hex = lambda rgb: '#%02x%02x%02x' % tuple(map(lambda x: int(x*255), rgb))
+    u_colors = {x: to_hex(color(i, len(u))) for i, x in enumerate(u)}
+
+    def color(texto):
+        if texto == '':
+            return 'background: #fff6eb'
+        if '/' in texto:
+            return f'background: {to_hex(hsv_to_rgb(0.0, 0.4, 1.0))}'
+        style = f'background: {u_colors[texto.split(" ")[0]]}'
+        if 'E' in texto.split(' ')[-1]:
+            style += '; font-style: italic'
+        if 'I' in texto.split(' ')[-1]:
+            style += '; font-weight: bold'
+        return style
+
+    def make_pretty(styler):
+        styler.set_caption("Horario")
+        styler.set_table_styles([
+            {'selector': 'th', 'props': [('background', '#fac27d')]},
+            {'selector': 'td', 'props': []},
+            {'selector': '*', 'props': [('color', 'black'), ('text-align', 'center')]},
+        ])
+        styler.applymap(color, subset=pd.IndexSlice[:, ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']])
+        return styler
+
+    return horario.df.fillna('').style.pipe(make_pretty)
