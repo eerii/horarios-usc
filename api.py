@@ -56,15 +56,16 @@ class Materia:
     abreviatura: str
     enlace: str
     curso: int
-    semestre: int
+    cuatrimestre: int
     tipo: TipoMateria
+    grupo_seleccionado: int
     horario: list[HoraClase] = field(default_factory=list)
     examenes: list[Examen] = field(default_factory=list)
     
 @dataclass
 class Horario:
     df: pd.DataFrame
-    materias: list[(Materia, int)] = field(default_factory=list)
+    materias: dict[str, Materia] = field(default_factory=dict)
 
 # Obtener y procesar la lista de materias desde la web de la USC
 # ---
@@ -84,15 +85,16 @@ def lista_materias(url_base=url_base, grado=grado):
         for m in tb_grei:
             data = m.parent.parent
             titulo = data.find('a')
-            curso, semestre, tipo, _ = data.find('p', text=re.compile('Curso')).text.split(' | ')
+            curso, cuatrimestre, tipo, _ = data.find('p', text=re.compile('Curso')).text.split(' | ')
 
             materias.append(Materia(
                 nombre = titulo.text,
                 abreviatura = ''.join(filter(lambda x: x.isupper(), titulo.text)),
                 enlace = 'https://www.usc.gal' + titulo['href'],
                 curso = int(curso[0]),
-                semestre = int(semestre[0]) if semestre[0].isnumeric() else 0,
-                tipo = TipoMateria(tipo)
+                cuatrimestre = int(cuatrimestre[0]) if cuatrimestre[0].isnumeric() else 0,
+                tipo = TipoMateria(tipo),
+                grupo_seleccionado = 0
             ))
     else:
         f = open(url_base, 'r')
@@ -111,7 +113,7 @@ def datos_materia(materia: Materia):
     r = requests.get(materia.enlace)
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    tb_cl = soup.find('caption', text=re.compile('[semestre|Anual]'))
+    tb_cl = soup.find('caption', text=re.compile('[cuatrimestre|Anual]'))
     if not tb_cl:
         return materia
     tb_cl = tb_cl.parent
@@ -189,51 +191,64 @@ def iniciar_horario():
     horas = pd.date_range(start = '09:00', end = '20:00',freq = '30min').strftime('%H:%M')
     dias = [d.value for d in DiaSemana]
 
-    return Horario(pd.DataFrame(index=horas, columns=dias), [])
-
-# Añade una materia al horario especificado en el grupo indicado
-def horario_materia(horario: Horario, materia: Materia, grupo: int):
-    for h in materia.horario:
-        if h.grupo != grupo and h.tipo == TipoClase.INTERACTIVA:
-            continue
-
-        ch = { TipoClase.EXPOSITIVA: 'E', TipoClase.INTERACTIVA: 'I', TipoClase.SEMINARIO: 'S' }
-
-        r = pd.date_range(start=h.hora_inicio.strftime('%H:%M'), end=h.hora_fin.strftime('%H:%M'), freq='30min')[:-1]
-
-        # Comprobar conflictos
-        conflicto = False
-        for hora in r:
-            m = horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]
-            if not pd.isna(m):
-                mm = f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}"
-                if m == mm:
-                    continue
-                if not conflicto:
-                    print(f"[Conflicto] {mm} / {m} - {h.dia_semana.value} {hora.strftime('%H:%M')}")
-                conflicto = True
-
-        for hora in r:
-            m = set(str(horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]).split(' / '))
-            m.add(f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}")
-            m = list(filter(lambda x: x != 'nan', m))
-            horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value] = ' / '.join(sorted(m))
-        
-    horario.materias += [(materia, grupo)]
-    return horario
+    return Horario(pd.DataFrame(index=horas, columns=dias), {})
 
 # Crea un horario del curso indicado
-def horario_curso(curso: int, semestre: int, grupo: int, url_base=url_base, grado=grado):
+def horario_curso(curso: int, cuatrimestre: int, grupo: int, url_base=url_base, grado=grado):
     horario = iniciar_horario()
 
     for m in lista_materias(url_base, grado):
-        if m.curso != curso or (m.semestre > 0 and m.semestre != semestre):
+        if m.curso != curso or (m.cuatrimestre > 0 and m.cuatrimestre != cuatrimestre):
             continue
         if 'http' in url_base:
             m = datos_materia(m)
-        horario_materia(horario, m, grupo)
+        incluir_en_horario(horario, m, grupo)
 
+    actualizar_horario(horario)
     return horario
+
+# Añade una materia al horario especificado en el grupo indicado
+def incluir_en_horario(horario: Horario, materia: Materia, grupo: int):
+    if not materia.nombre in horario.materias:
+        horario.materias[materia.nombre] = materia
+
+    horario.materias[materia.nombre].grupo_seleccionado = grupo
+    actualizar_horario(horario)
+
+# Elimina una materia del horario
+def eliminar_de_horario(horario: Horario, materia: Materia | str):
+    horario.materias.pop(materia if isinstance(materia, str) else materia.nombre)
+    actualizar_horario(horario)
+
+# Actualiza el dataframe del horario
+def actualizar_horario(horario: Horario):
+    horario.df = pd.DataFrame(index=horario.df.index, columns=horario.df.columns)
+    for materia in horario.materias.values():
+        for h in materia.horario:
+            if h.grupo != materia.grupo_seleccionado and h.tipo == TipoClase.INTERACTIVA:
+                continue
+
+            ch = { TipoClase.EXPOSITIVA: 'E', TipoClase.INTERACTIVA: 'I', TipoClase.SEMINARIO: 'S' }
+
+            r = pd.date_range(start=h.hora_inicio.strftime('%H:%M'), end=h.hora_fin.strftime('%H:%M'), freq='30min')[:-1]
+
+            # Comprobar conflictos
+            conflicto = False
+            for hora in r:
+                m = horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]
+                if not pd.isna(m):
+                    mm = f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}"
+                    if m == mm:
+                        continue
+                    if not conflicto:
+                        print(f"[Conflicto] {mm} / {m} - {h.dia_semana.value} {hora.strftime('%H:%M')}")
+                    conflicto = True
+
+            for hora in r:
+                m = set(str(horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]).split(' / '))
+                m.add(f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}")
+                m = list(filter(lambda x: x != 'nan', m))
+                horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value] = ' / '.join(sorted(m))
 
 # Formatear horario con colores y estilo
 def formato_horario(horario: Horario):
@@ -258,7 +273,6 @@ def formato_horario(horario: Horario):
         return style
 
     def make_pretty(styler):
-        styler.set_caption("Horario")
         styler.set_table_styles([
             {'selector': 'th', 'props': [('background', '#fac27d')]},
             {'selector': 'td', 'props': []},
