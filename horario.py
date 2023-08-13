@@ -45,8 +45,7 @@ def refrescar_curso(e):
 def refrescar_cuatri(e):
     global horario, cursos, cuatrimestres
     horario = api.horario_curso(cursos[pin.curso], cuatrimestres[e])
-    comprobar_semana()
-    widget_grupos(pin.semana)
+    widget_grupos()
     render()
 
 def refrescar_grupo(tipo):
