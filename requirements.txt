@@ -1,6 +1,5 @@
 beautifulsoup4
 dacite
-Flask
 pandas
 pywebio
 rapidfuzz

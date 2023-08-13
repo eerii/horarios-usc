@@ -67,41 +67,77 @@ class Horario:
     df: pd.DataFrame
     materias: dict[str, Materia] = field(default_factory=dict)
 
+log = ''
+
 # Obtener y procesar la lista de materias desde la web de la USC
 # ---
 
-# Obtiene una lista de las materias del grado indicado con la url a la página específica
-url_base = 'https://www.usc.gal/es/centro/escuela-tecnica-superior-ingenieria'
-grado = 'Grao en Ingeniería Informática.*2'
-def lista_materias(url_base=url_base, grado=grado):
+# Obtiene una lista de los grados disponibles
+def obtener_grados(url_base):
+    gr = set()
+
+    try:
+        r = requests.get(url_base + '/horarios/materias')
+    except:
+        return None
+
+    soup = BeautifulSoup(r.text, 'html.parser')
+
+    descripciones = soup.findAll('div', class_='at-text')
+    for g in descripciones:
+        grado = g.findAll('p')[0].text
+        gr.add(grado)
+
+    return list(gr)
+
+# Crea una lista offline con todos los datos de las materias
+def generar_lista_materias(archivo: str, url_base, grado):
+    print('Obteniendo lista de materias...')
+    l = []
+
+    r = requests.get(url_base + '/horarios/materias')
+    soup = BeautifulSoup(r.text, 'html.parser')
+
+    tb_grei = soup.findAll('p', text=re.compile(grado))
+    for m in tb_grei:
+        data = m.parent.parent
+        titulo = data.find('a')
+        curso, cuatrimestre, tipo, _ = data.find('p', text=re.compile('Curso')).text.split(' | ')
+
+        l.append(Materia(
+            nombre = titulo.text,
+            abreviatura = ''.join(filter(lambda x: x.isupper(), titulo.text)),
+            enlace = 'https://www.usc.gal' + titulo['href'],
+            curso = int(curso[0]),
+            cuatrimestre = int(cuatrimestre[0]) if cuatrimestre[0].isnumeric() else 0,
+            tipo = TipoMateria(tipo),
+            grupo_seleccionado = 0
+        ))
+
+    for m in l:
+        yield m.nombre
+        m = asdict(datos_materia(m))
+
+    def writer(o):
+        if isinstance(o, dt.datetime) or isinstance(o, dt.time):
+            return o.isoformat()
+        if isinstance(o, set):
+            return list(o)
+        return o.__dict__
+
+    f = open(archivo, 'w')
+    f.write(json.dumps(l, default = writer, sort_keys = True, indent = 4, ensure_ascii = False))
+    f.close()
+
+# Lee la lista generada de materias
+def lista_materias():
     materias: list(Materia) = []
 
-    if 'http' in url_base:
-        print('Obteniendo lista de materias...')
-        r = requests.get(url_base + '/horarios/materias')
-        soup = BeautifulSoup(r.text, 'html.parser')
-
-        tb_grei = soup.findAll('p', text=re.compile(grado))
-        for m in tb_grei:
-            data = m.parent.parent
-            titulo = data.find('a')
-            curso, cuatrimestre, tipo, _ = data.find('p', text=re.compile('Curso')).text.split(' | ')
-
-            materias.append(Materia(
-                nombre = titulo.text,
-                abreviatura = ''.join(filter(lambda x: x.isupper(), titulo.text)),
-                enlace = 'https://www.usc.gal' + titulo['href'],
-                curso = int(curso[0]),
-                cuatrimestre = int(cuatrimestre[0]) if cuatrimestre[0].isnumeric() else 0,
-                tipo = TipoMateria(tipo),
-                grupo_seleccionado = 0
-            ))
-    else:
-        f = open(url_base, 'r')
-        conf = dcConfig(cast = [Enum, set], type_hooks = {dt.datetime: dt.datetime.fromisoformat, dt.time: dt.time.fromisoformat})
-        for m in json.load(f):
-            materias.append(from_dict(data_class=Materia, data=m, config=conf))
-        f.close()
+    f = open('materias.json', 'r')
+    conf = dcConfig(cast = [Enum, set], type_hooks = {dt.datetime: dt.datetime.fromisoformat, dt.time: dt.time.fromisoformat})
+    for m in json.load(f):
+        materias.append(from_dict(data_class=Materia, data=m, config=conf))
+    f.close()
 
     return materias
 
@@ -166,23 +202,6 @@ def encontrar_materia(materias: list[Materia], busqueda: str):
 
     return list(sorted(nombres, key=lambda x: x[1], reverse = True))[:5]
 
-# Crea una lista offline con todos los datos de las materias
-def generar_lista_materias(archivo: str):
-    l = lista_materias()
-    for m in l:
-        m = asdict(datos_materia(m))
-
-    def writer(o):
-        if isinstance(o, dt.datetime) or isinstance(o, dt.time):
-            return o.isoformat()
-        if isinstance(o, set):
-            return list(o)
-        return o.__dict__
-
-    f = open(archivo, 'w')
-    f.write(json.dumps(l, default = writer, sort_keys = True, indent = 4, ensure_ascii = False))
-    f.close()
-
 # Horarios
 # ---
 
@@ -194,14 +213,12 @@ def iniciar_horario():
     return Horario(pd.DataFrame(index=horas, columns=dias), {})
 
 # Crea un horario del curso indicado
-def horario_curso(curso: int, cuatrimestre: int, grupo: int, url_base=url_base, grado=grado):
+def horario_curso(curso: int, cuatrimestre: int, grupo: int):
     horario = iniciar_horario()
 
-    for m in lista_materias(url_base, grado):
+    for m in lista_materias():
         if m.curso != curso or (m.cuatrimestre > 0 and m.cuatrimestre != cuatrimestre):
             continue
-        if 'http' in url_base:
-            m = datos_materia(m)
         incluir_en_horario(horario, m, grupo)
 
     actualizar_horario(horario)
