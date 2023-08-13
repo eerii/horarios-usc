@@ -100,11 +100,15 @@ def generar_lista_materias(archivo: str, url_base, grado):
     r = requests.get(url_base + '/horarios/materias')
     soup = BeautifulSoup(r.text, 'html.parser')
 
-    tb_grei = soup.findAll('p', text=re.compile(grado))
-    for m in tb_grei:
-        data = m.parent.parent
-        titulo = data.find('a')
-        curso, cuatrimestre, tipo, _ = data.find('p', text=re.compile('Curso')).text.split(' | ')
+    tb_mat = soup.findAll('div', class_='generic-summary-content-wrapper')
+    for m in tb_mat:
+        gr = m.findChildren('p')[0].text
+        tidy = lambda x: x.replace(' ', '').replace('(', '').replace(')', '')
+        if tidy(grado) != tidy(gr):
+            continue
+
+        titulo = m.find('a')
+        curso, cuatrimestre, tipo, _ = m.find('p', text=re.compile('Curso')).text.split(' | ')
 
         l.append(Materia(
             nombre = titulo.text,
@@ -118,8 +122,8 @@ def generar_lista_materias(archivo: str, url_base, grado):
         ))
 
     for m in l:
-        yield m.nombre
-        m = asdict(datos_materia(m))
+        yield datos_materia(m)
+        m = asdict(m)
 
     def writer(o):
         if isinstance(o, dt.datetime) or isinstance(o, dt.time):
@@ -154,7 +158,6 @@ def datos_materia(materia: Materia):
         r = requests.get(materia.enlace)
         soup = BeautifulSoup(r.text, 'html.parser')
 
-        # todo: múltiples fechas
         tb_cl = soup.find('th', text=re.compile(f"[{'|'.join([e.value for e in DiaSemana])}]"))
         if tb_cl:
             grupo_max = { t.value: -1 for t in TipoClase }
@@ -182,7 +185,7 @@ def datos_materia(materia: Materia):
                 ))
 
                 grupo_max[tipo.value] = max(grupo_max[tipo.value], int(grupo))
-                materia.grupo_seleccionado[tipo.value] = 1
+                materia.grupo_seleccionado[tipo.value] = 0 if materia.tipo == TipoMateria.OPTATIVO else 1
                 materia.num_grupos[tipo.value] = grupo_max[tipo.value]
                                                         
         tb_ex = soup.find('caption', text=re.compile('Exámenes'))
@@ -200,11 +203,10 @@ def datos_materia(materia: Materia):
                     ))
                     continue
                 examen.aula.add(aula)
+        return materia.nombre
     except:
         print(f"Error al obtener datos de '{materia.nombre}'")
-        yield f"ERROR {materia.nombre}"
-
-    return materia
+        return f"ERROR {materia.nombre}"
 
 # Utiliza fuzzy matching para encontrar el nombre de una materia
 def encontrar_materia(materias: list[Materia], busqueda: str):
@@ -289,7 +291,14 @@ def formato_horario(horario: Horario):
     color = lambda i, t: hsv_to_rgb((i + 1) / (t + 1), 0.4, 1.0)
     to_hex = lambda rgb: '#%02x%02x%02x' % tuple(map(lambda x: int(x*255), rgb))
     u_colors = {x: to_hex(color(i, len(u))) for i, x in enumerate(u)}
-
+    
+    filtered = horario.df.dropna(how='all')
+    empty = horario.df.index.difference(filtered.index)
+    empty = pd.to_datetime(empty, format='%H:%M').to_series()
+    empty = empty.groupby(empty.diff().ne(pd.Timedelta('30min')).cumsum()).agg(['first', 'last'])
+    empty['first'] = empty['first'] - pd.Timedelta('30min')
+    horario.df = filtered
+    
     def color(texto):
         if texto == '':
             return 'background: #fff6eb'
@@ -309,6 +318,8 @@ def formato_horario(horario: Horario):
             {'selector': '*', 'props': [('color', 'black'), ('text-align', 'center')]},
         ])
         styler.applymap(color, subset=pd.IndexSlice[:, ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']])
+        if len(empty) > 0 and not empty['first'].iloc[0].strftime('%H:%M') < horario.df.index[0]:
+            styler.applymap(lambda x: 'border-bottom: 2px solid black', subset=pd.IndexSlice[empty['first'].dt.strftime('%H:%M'), :])
         return styler
 
     return horario.df.fillna('').style.pipe(make_pretty)
