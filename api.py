@@ -28,6 +28,7 @@ class TipoClase(str, Enum):
     EXPOSITIVA = 'CLE'
     INTERACTIVA = 'CLIL'
     SEMINARIO = 'CLIS'
+tipo_clase_ch = { TipoClase.EXPOSITIVA: 'E', TipoClase.INTERACTIVA: 'I', TipoClase.SEMINARIO: 'S' }
 
 class DiaSemana(str, Enum):
     LUNES = 'Lunes'
@@ -58,7 +59,8 @@ class Materia:
     curso: int
     cuatrimestre: int
     tipo: TipoMateria
-    grupo_seleccionado: int
+    grupo_seleccionado: dict[str, int] = field(default_factory=dict)
+    num_grupos: dict[str, int] = field(default_factory=dict)
     horario: list[HoraClase] = field(default_factory=list)
     examenes: list[Examen] = field(default_factory=list)
     
@@ -111,7 +113,8 @@ def generar_lista_materias(archivo: str, url_base, grado):
             curso = int(curso[0]),
             cuatrimestre = int(cuatrimestre[0]) if cuatrimestre[0].isnumeric() else 0,
             tipo = TipoMateria(tipo),
-            grupo_seleccionado = 0
+            grupo_seleccionado = { t.value: -1 for t in TipoClase },
+            num_grupos = { t.value: -1 for t in TipoClase }
         ))
 
     for m in l:
@@ -146,53 +149,60 @@ def datos_materia(materia: Materia):
     dia = DiaSemana.LUNES
 
     print(f"Obteniendo datos de '{materia.nombre}'...")
-    r = requests.get(materia.enlace)
-    soup = BeautifulSoup(r.text, 'html.parser')
 
-    tb_cl = soup.find('caption', text=re.compile('[cuatrimestre|Anual]'))
-    if not tb_cl:
-        return materia
-    tb_cl = tb_cl.parent
+    try:
+        r = requests.get(materia.enlace)
+        soup = BeautifulSoup(r.text, 'html.parser')
 
-    tb_ex = soup.find('caption', text=re.compile('Exámenes')).parent
+        # todo: múltiples fechas
+        tb_cl = soup.find('th', text=re.compile(f"[{'|'.join([e.value for e in DiaSemana])}]"))
+        if tb_cl:
+            grupo_max = { t.value: -1 for t in TipoClase }
+            for c in tb_cl.parent.parent.parent.findAll('tr'):
+                if c.find('th'):
+                    dia = DiaSemana(c.find('th').text)
+                    continue
 
-    # todo: múltiples fechas
-    for c in tb_cl.findAll('tr'):
-        if c.find('th'):
-            dia = DiaSemana(c.find('th').text)
-            continue
+                tipo, grupo = c.find_all('td')[1].text.split(' ')[-1][1:].split('_')
+                if not tipo in set(i.value for i in TipoClase):
+                    for t in TipoClase:
+                        if tipo in t.value:
+                            tipo = t
+                            break
+                tipo = TipoClase(tipo)
+                hora_inicio, hora_fin = list(map(lambda x: dt.datetime.strptime(x, '%H:%M').time(), c.find_all('td')[0].text.split('-')))
+                
+                materia.horario.append(HoraClase(
+                    grupo = int(grupo),
+                    dia_semana = dia,
+                    hora_inicio = hora_inicio,
+                    hora_fin = hora_fin,
+                    aula = c.find_all('td')[2].text.split(' ')[-1],
+                    tipo = tipo
+                ))
 
-        tipo, grupo = c.find_all('td')[1].text.split(' ')[-1][1:].split('_')
-        if not tipo in set(i.value for i in TipoClase):
-            for t in TipoClase:
-                if tipo in t.value:
-                    tipo = t
-                    break
-        tipo = TipoClase(tipo)
-        hora_inicio, hora_fin = list(map(lambda x: dt.datetime.strptime(x, '%H:%M').time(), c.find_all('td')[0].text.split('-')))
-        
-        materia.horario.append(HoraClase(
-            grupo = int(grupo),
-            dia_semana = dia,
-            hora_inicio = hora_inicio,
-            hora_fin = hora_fin,
-            aula = c.find_all('td')[2].text.split(' ')[-1],
-            tipo = tipo
-        ))
+                grupo_max[tipo.value] = max(grupo_max[tipo.value], int(grupo))
+                materia.grupo_seleccionado[tipo.value] = 1
+                materia.num_grupos[tipo.value] = grupo_max[tipo.value]
+                                                        
+        tb_ex = soup.find('caption', text=re.compile('Exámenes'))
+        if tb_ex:
+            for e in tb_ex.parent.findAll('tr', class_='target-items-selector'):
+                str_fecha, _ = e.find_all('td')[0].text.split('-')
+                fecha = dt.datetime.strptime(str_fecha, '%d.%m.%Y %H:%M')
+                aula = e.find_all('td')[2].text.split(' ')[-1]
 
-    for e in tb_ex.findAll('tr', class_='target-items-selector'):
-        str_fecha, _ = e.find_all('td')[0].text.split('-')
-        fecha = dt.datetime.strptime(str_fecha, '%d.%m.%Y %H:%M')
-        aula = e.find_all('td')[2].text.split(' ')[-1]
-
-        examen = next(filter(lambda e: e.fecha == fecha, materia.examenes), None)
-        if examen is None:
-            materia.examenes.append(Examen(
-                fecha = fecha,
-                aula = {aula}
-            ))
-            continue
-        examen.aula.add(aula)
+                examen = next(filter(lambda e: e.fecha == fecha, materia.examenes), None)
+                if examen is None:
+                    materia.examenes.append(Examen(
+                        fecha = fecha,
+                        aula = {aula}
+                    ))
+                    continue
+                examen.aula.add(aula)
+    except:
+        print(f"Error al obtener datos de '{materia.nombre}'")
+        yield f"ERROR {materia.nombre}"
 
     return materia
 
@@ -207,29 +217,28 @@ def encontrar_materia(materias: list[Materia], busqueda: str):
 
 # Crea un nuevo horario (pandas dataframe) para guardar las clases
 def iniciar_horario():
-    horas = pd.date_range(start = '09:00', end = '20:00',freq = '30min').strftime('%H:%M')
+    horas = pd.date_range(start = '09:00', end = '10:00', freq = '30min').strftime('%H:%M')
     dias = [d.value for d in DiaSemana]
 
     return Horario(pd.DataFrame(index=horas, columns=dias), {})
 
 # Crea un horario del curso indicado
-def horario_curso(curso: int, cuatrimestre: int, grupo: int):
+def horario_curso(curso: int, cuatrimestre: int):
     horario = iniciar_horario()
 
     for m in lista_materias():
         if m.curso != curso or (m.cuatrimestre > 0 and m.cuatrimestre != cuatrimestre):
             continue
-        incluir_en_horario(horario, m, grupo)
+        incluir_en_horario(horario, m)
 
     actualizar_horario(horario)
     return horario
 
 # Añade una materia al horario especificado en el grupo indicado
-def incluir_en_horario(horario: Horario, materia: Materia, grupo: int):
+def incluir_en_horario(horario: Horario, materia: Materia):
     if not materia.nombre in horario.materias:
         horario.materias[materia.nombre] = materia
 
-    horario.materias[materia.nombre].grupo_seleccionado = grupo
     actualizar_horario(horario)
 
 # Elimina una materia del horario
@@ -242,19 +251,23 @@ def actualizar_horario(horario: Horario):
     horario.df = pd.DataFrame(index=horario.df.index, columns=horario.df.columns)
     for materia in horario.materias.values():
         for h in materia.horario:
-            if h.grupo != materia.grupo_seleccionado and h.tipo == TipoClase.INTERACTIVA:
+            if h.grupo != materia.grupo_seleccionado[h.tipo.value]:
                 continue
-
-            ch = { TipoClase.EXPOSITIVA: 'E', TipoClase.INTERACTIVA: 'I', TipoClase.SEMINARIO: 'S' }
 
             r = pd.date_range(start=h.hora_inicio.strftime('%H:%M'), end=h.hora_fin.strftime('%H:%M'), freq='30min')[:-1]
 
             # Comprobar conflictos
             conflicto = False
             for hora in r:
+                # Comprobar si el horario tiene esa hora, y si no ampliarlo
+                if not hora.strftime('%H:%M') in horario.df.index:
+                    hmin = min(horario.df.index[0], hora.strftime('%H:%M'))
+                    hmax = max(horario.df.index[-1], hora.strftime('%H:%M'))
+                    horario.df = horario.df.reindex(pd.date_range(start=hmin, end=hmax, freq='30min').strftime('%H:%M'))
+
                 m = horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]
                 if not pd.isna(m):
-                    mm = f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}"
+                    mm = f"{materia.abreviatura} {tipo_clase_ch[h.tipo]}{h.grupo}"
                     if m == mm:
                         continue
                     if not conflicto:
@@ -263,7 +276,7 @@ def actualizar_horario(horario: Horario):
 
             for hora in r:
                 m = set(str(horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value]).split(' / '))
-                m.add(f"{materia.abreviatura} {ch[h.tipo]}{h.grupo}")
+                m.add(f"{materia.abreviatura} {tipo_clase_ch[h.tipo]}{h.grupo}")
                 m = list(filter(lambda x: x != 'nan', m))
                 horario.df.loc[hora.strftime('%H:%M'), h.dia_semana.value] = ' / '.join(sorted(m))
 

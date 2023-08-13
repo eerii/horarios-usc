@@ -1,3 +1,6 @@
+# todo: cursos en base a los disponibles
+# todo: optativas sin grupo
+
 import api
 
 from pywebio.input import *
@@ -18,29 +21,32 @@ def materia(nombre: str):
 
 def refrescar_curso(e):
     global horario
-    horario = api.horario_curso(cursos[e], cuatrimestres[pin.cuatri], pin.grupo)
+    horario = api.horario_curso(cursos[e], cuatrimestres[pin.cuatri])
     render()
 def refrescar_cuatri(e):
     global horario
-    horario = api.horario_curso(cursos[pin.curso], cuatrimestres[e], pin.grupo)
+    horario = api.horario_curso(cursos[pin.curso], cuatrimestres[e])
     render()
-def refrescar_grupo(e):
+def refrescar_grupo(tipo):
     global horario
-    for m in horario.materias.values():
-        if m.curso == cursos[pin.curso]:
-            m.grupo_seleccionado = e
-    api.actualizar_horario(horario)
-    render()
+    def wrapper(e):
+        for m in horario.materias.values():
+            if m.curso == cursos[pin.curso]:
+                m.grupo_seleccionado[tipo.value] = min(m.num_grupos, e)
+        api.actualizar_horario(horario)
+        render()
+    return wrapper
 
 def incluir_materia():
     global horario
-    api.incluir_en_horario(horario, materia(pin.buscar), 1)
+    api.incluir_en_horario(horario, materia(pin.buscar))
     render()
 
-def cambiar_grupo_materia(nombre):
+def cambiar_grupo_materia(nombre, tipo):
     global horario
     def wrapper(e):
-        api.incluir_en_horario(horario, materia(nombre), e)
+        horario.materias[nombre].grupo_seleccionado[tipo] = e
+        api.actualizar_horario(horario)
         render()
     return wrapper
 
@@ -84,7 +90,7 @@ def elegir_grado():
         url = pin.url if 'http' in pin.url else f'https://{pin.url}'
         with use_scope('buscando_grados'):
             put_info('Buscando grados')
-        grados = api.obtener_grados(url)
+        grados = sorted(api.obtener_grados(url))
         remove('buscando_grados')
         if not grados:
             put_error(f"La url {url} parece ser incorrecta, prueba de nuevo")
@@ -120,36 +126,49 @@ def elegir_grado():
         pass
     
     for n in api.generar_lista_materias('materias.json', url, grado):
-        with use_scope('cargando', clear = True):
-            put_info(f"Obteniendo datos de '{n}'")
-    print("done")
+        if 'ERROR' in n:
+            with use_scope('error'):
+                put_error(f"Error obteniendo datos de '{n.split(' ')[1]}', inténtalo de nuevo más tarde")
+        else:
+            with use_scope('cargando', clear = True):
+                put_info(f"Obteniendo datos de '{n}'")
+    print('done')
     
     remove('cargando')
+    remove('error')
     remove('grado')
     remove('url')
 
-cursos = { "Primero": 1, "Segundo": 2, "Tercero": 3, "Cuarto": 4, "Quinto": 5 }
-cuatrimestres = { "Primero": 1, "Segundo": 2 }
+cursos = { 'Primero': 1, 'Segundo': 2, 'Tercero': 3, 'Cuarto': 4, 'Quinto': 5 }
+cuatrimestres = { 'Primero': 1, 'Segundo': 2 }
 
-def widgets():
-    put_row([
-        put_select('curso', options = cursos.keys(), label = 'Curso'),
-        None,
-        put_select('cuatri', options = cuatrimestres.keys(), label = 'Cuatrimestre'),
-        None,
-        put_select('grupo', options = list(range(1, 6)), label = 'Grupo'),
-    ])
-
-    pin_on_change('curso', refrescar_curso)
-    pin_on_change('cuatri', refrescar_cuatri)
-    pin_on_change('grupo', refrescar_grupo)
-
-# Display
-# ---
-
-def render():
+def widget_seleccion():
     global horario
+    with use_scope('seleccion', clear = True):
+        num_grupos = { t: -1 for t in api.TipoClase }
+        for m in horario.materias.values():
+            for t in m.grupo_seleccionado:
+                num_grupos[t] = max(num_grupos[t], m.num_grupos[t])
 
+        select_grupo = []
+        for t in sorted(num_grupos.keys(), key = lambda x: api.tipo_clase_ch[x]):
+            if num_grupos[t] < 1:
+                continue
+            select_grupo.append(None)
+            select_grupo.append(put_select(f"grupo_{t.value}", options = list(range(1, num_grupos[t]+1)), value = 1, label = f"Grupo {t.value}"))
+            pin_on_change(f"grupo_{t.value}", refrescar_grupo(t), clear = True)
+
+        put_row([
+            put_select('curso', options = cursos.keys(), label = 'Curso'),
+            None,
+            put_select('cuatri', options = cuatrimestres.keys(), label = 'Cuatrimestre'),
+        ] + select_grupo)
+
+        pin_on_change('curso', refrescar_curso)
+        pin_on_change('cuatri', refrescar_cuatri)
+
+def widget_buscar():
+    global horario
     with use_scope('buscar', clear = True):
         materias = [ m.nombre for m in api.lista_materias() if m.cuatrimestre == cuatrimestres[pin.cuatri] and not m.nombre in horario.materias ]
 
@@ -159,15 +178,32 @@ def render():
             put_button('Añadir', onclick = incluir_materia)
         ], 'auto 10px 76px')
 
-    with use_scope('horario', clear = True):
-        def cambio_grupo(nombre, grupo):
-            n = 'cambio' + unidecode(nombre.replace(' ', '_'))
-            select = put_select(n, options = list(range(1, 6)), value = grupo)
-            pin_on_change(n, cambiar_grupo_materia(nombre), clear = True)
-            return select
+def widget_reset():
+    with use_scope('resetear'):
+        put_button('Resetear o cambiar de grado', onclick = resetear)
 
-        materias = [ [ 'Materia', 'Abr.', 'Grupo', 'Quitar' ] ]
-        materias += [ [ m.nombre, m.abreviatura, cambio_grupo(m.nombre, m.grupo_seleccionado), put_button('X', onclick = eliminar_materia(m.nombre)) ] for m in horario.materias.values() ]
+# Display
+# ---
+
+def render():
+    global horario
+    with use_scope('horario', clear = True):
+        def cambio_grupo(nombre, grupos, num_grupos):
+            l = []
+            for t in sorted(grupos.keys(), key = lambda x: api.tipo_clase_ch[x]):
+                n = 'cambio' + t + unidecode(nombre.replace(' ', '_'))
+                g = grupos[t]
+                if g == -1:
+                    l.append(put_select(n, options = [ '-' ]))
+                    continue
+                select = put_select(n, options = list(range(1, num_grupos[t]+1)), value = g)
+                pin_on_change(n, cambiar_grupo_materia(nombre, t), clear = True)
+                l.append(select)
+            return put_row(l)
+
+        grupos = '|'.join([api.tipo_clase_ch[t] for t in api.TipoClase])
+        materias = [ [ 'Materia', 'Abr.', f"Grupos {grupos}", 'Quitar' ] ]
+        materias += [ [ m.nombre, m.abreviatura, cambio_grupo(m.nombre, m.grupo_seleccionado, m.num_grupos), put_button('X', onclick = eliminar_materia(m.nombre)) ] for m in horario.materias.values() ]
 
         put_row([
             put_html(api.formato_horario(horario).to_html(border = 0)),
@@ -175,13 +211,14 @@ def render():
             put_table(materias)
         ])
 
-    with use_scope('resetear', clear = True):
-        put_button('Resetear o cambiar de grado', onclick = resetear)
-
 def main():
     elegir_grado()
-    widgets()
-    refrescar_curso('Primero')
+    global horario
+    horario = api.horario_curso(1, 1)
+    widget_seleccion()
+    widget_buscar()
+    render()
+    widget_reset()
 
 if __name__ == '__main__':
     main()

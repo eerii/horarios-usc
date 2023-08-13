@@ -1,0 +1,4570 @@
+[
+    {
+        "abreviatura": "AC",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/astrofisica-cosmologia-12706-12301-2-78469",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-21T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-03T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "17:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "17:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "17:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "17:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Astrofísica y Cosmología",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "B",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/biofisica-12711-12306-3-78492",
+        "examenes": [
+            {
+                "aula": [
+                    "2",
+                    "130"
+                ],
+                "fecha": "2024-01-09T09:00:00"
+            },
+            {
+                "aula": [
+                    "0"
+                ],
+                "fecha": "2024-06-18T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Biofísica",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "B",
+        "cuatrimestre": 1,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/biologia-12710-12305-11-78486",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2023-12-19T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-07T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Biología",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "E",
+        "cuatrimestre": 1,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/electrodinamica-12707-12302-2-78473",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-24T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-12T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Electrodinámica",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "EI",
+        "cuatrimestre": 1,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/electromagnetismo-12705-12300-2-78464",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-08T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-18T10:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Electromagnetismo I",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "EII",
+        "cuatrimestre": 2,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/electromagnetismo-ii-12705-12300-2-78465",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-20T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-25T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Electromagnetismo II",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "EF",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/electronica-fisica-12706-12301-2-78466",
+        "examenes": [
+            {
+                "aula": [
+                    "130",
+                    "(Informática)",
+                    "830",
+                    "6",
+                    "0"
+                ],
+                "fecha": "2024-05-28T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "130",
+                    "(Informática)",
+                    "830"
+                ],
+                "fecha": "2024-07-05T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "19:30:00",
+                "hora_inicio": "17:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "19:30:00",
+                "hora_inicio": "17:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "19:30:00",
+                "hora_inicio": "17:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "19:30:00",
+                "hora_inicio": "17:30:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Electrónica Física",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FC",
+        "cuatrimestre": 2,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-computacional-12708-12303-2-78480",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-06-03T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-02T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": -1,
+            "CLIL": 1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "14:30:00",
+                "hora_inicio": "12:30:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Miércoles",
+                "grupo": 3,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "14:30:00",
+                "hora_inicio": "12:30:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Viernes",
+                "grupo": 4,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLIL"
+            }
+        ],
+        "nombre": "Física Computacional",
+        "num_grupos": {
+            "CLE": -1,
+            "CLIL": 4,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FCI",
+        "cuatrimestre": 1,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-cuantica-12705-12300-2-78462",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-17T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-10T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física Cuántica I",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FCII",
+        "cuatrimestre": 2,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-cuantica-ii-12705-12300-2-78463",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-01T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-16T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "11:30:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "11:30:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "11:30:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "11:30:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "11:30:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física Cuántica II",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FCIII",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-cuantica-iii-12707-12302-2-78470",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-12T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2023-12-22T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física Cuántica III",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FMB",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-materia-blanda-12711-12306-3-78493",
+        "examenes": [
+            {
+                "aula": [
+                    "4",
+                    "(Informática)"
+                ],
+                "fecha": "2024-01-08T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-07T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física de la Materia Blanda",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "FE",
+        "cuatrimestre": 2,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-energias-12711-12306-3-78490",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-29T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-26T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física de las Energías",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "FSC",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-sistemas-complejos-12711-12306-3-86280",
+        "examenes": [
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-17T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-11T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": 1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLIS"
+            }
+        ],
+        "nombre": "Física de los Sistemas Complejos",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": 2
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "FPE",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-particulas-elementales-12711-12306-3-78499",
+        "examenes": [
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-07-01T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-23T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física de Partículas Elementales",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "FES",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-solido-12706-12301-2-78468",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-10T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-19T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física del Estado Sólido",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FGI",
+        "cuatrimestre": 1,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-12705-12300-11-78454",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-17T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-15T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física General I",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "FGII",
+        "cuatrimestre": 2,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-ii-12705-12300-11-78455",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-24T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-16T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física General II",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "FM",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-medica-12711-12306-3-78501",
+        "examenes": [
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-05-22T16:00:00"
+            },
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-27T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "17:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "17:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física Médica",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "FN",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-nuclear-12711-12306-3-78498",
+        "examenes": [
+            {
+                "aula": [
+                    "0"
+                ],
+                "fecha": "2024-07-08T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-15T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física Nuclear",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "FNP",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fisica-nuclear-particulas-12706-12301-2-78467",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-18T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-28T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Física Nuclear y de Partículas",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FIE",
+        "cuatrimestre": 1,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fundamentos-instrumentacion-electronica-12709-12304-2-78485",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-10T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-19T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "21:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "21:00:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Fundamentos de Instrumentación Electrónica",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "FT",
+        "cuatrimestre": 1,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/fundamentos-termodinamica-12705-12300-2-78458",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-18T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-21T10:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Fundamentos de Termodinámica",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "G",
+        "cuatrimestre": 2,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/gravitacion-12711-12306-3-89717",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-21T09:00:00"
+            },
+            {
+                "aula": [
+                    "130",
+                    "(Informática)"
+                ],
+                "fecha": "2024-07-05T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Gravitación",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "IC",
+        "cuatrimestre": 1,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/informatica-cientificos-12710-12305-11-78488",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-11T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-19T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": 1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Lunes",
+                "grupo": 4,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "15:30:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Lunes",
+                "grupo": 5,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "18:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Miércoles",
+                "grupo": 6,
+                "hora_fin": "18:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "(Informática)",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "18:30:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLIL"
+            }
+        ],
+        "nombre": "Informática para Científicos",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": 6,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "MCI",
+        "cuatrimestre": 1,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/mecanica-clasica-12705-12300-2-78456",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2023-12-20T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-12T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Mecánica Clásica I",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "MCII",
+        "cuatrimestre": 2,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/mecanica-clasica-ii-12705-12300-2-78457",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-29T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-05T10:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Mecánica Clásica II",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "MCIII",
+        "cuatrimestre": 1,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/mecanica-clasica-iii-12707-12302-2-78471",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-16T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-20T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Mecánica Clásica III",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "ME",
+        "cuatrimestre": 2,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/mecanica-estadistica-12707-12302-2-78472",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-03T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-30T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "12:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "19:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "12:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "19:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Mecánica Estadística",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "MEA",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/metodos-experimentales-avanzados-12711-12306-3-89718",
+        "examenes": [
+            {
+                "aula": [
+                    "2"
+                ],
+                "fecha": "2024-07-04T16:00:00"
+            },
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-05-31T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": -1,
+            "CLIL": 1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:30:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLIL"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLIL"
+            }
+        ],
+        "nombre": "Métodos Experimentales Avanzados",
+        "num_grupos": {
+            "CLE": -1,
+            "CLIL": 1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "MMI",
+        "cuatrimestre": 1,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/metodos-matematicos-12708-12303-11-78474",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "Magna",
+                    "830"
+                ],
+                "fecha": "2024-01-09T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-19T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Métodos Matemáticos I",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "MMII",
+        "cuatrimestre": 1,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/metodos-matematicos-ii-12708-12303-11-78475",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-13T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "Magna",
+                    "830"
+                ],
+                "fecha": "2024-01-12T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Métodos Matemáticos II",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "MMIII",
+        "cuatrimestre": 2,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/metodos-matematicos-iii-12708-12303-11-78476",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-22T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-04T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Métodos Matemáticos III",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "MMIV",
+        "cuatrimestre": 2,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/metodos-matematicos-iv-12708-12303-11-78477",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-28T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-27T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "11:00:00",
+                "hora_inicio": "10:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Métodos Matemáticos IV",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "MMV",
+        "cuatrimestre": 1,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/metodos-matematicos-12708-12303-2-78478",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-11T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-14T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Métodos Matemáticos V",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "MMVI",
+        "cuatrimestre": 2,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/metodos-matematicos-vi-12708-12303-2-78479",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-14T10:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-28T10:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "19:00:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Métodos Matemáticos VI",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "NN",
+        "cuatrimestre": 2,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/nanomagnetismo-nanotecnologia-12711-12306-3-78489",
+        "examenes": [
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-05-20T09:00:00"
+            },
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-19T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "830",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Nanomagnetismo y Nanotecnología",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "ÓI",
+        "cuatrimestre": 1,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/optica-12705-12300-2-78460",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2023-12-21T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-13T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "11:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Óptica I",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "ÓII",
+        "cuatrimestre": 2,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/optica-ii-12705-12300-2-78461",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-27T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-27T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "12:30:00",
+                "hora_inicio": "11:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "12:30:00",
+                "hora_inicio": "11:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "12:30:00",
+                "hora_inicio": "11:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:30:00",
+                "hora_inicio": "11:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "12:30:00",
+                "hora_inicio": "11:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "18:00:00",
+                "hora_inicio": "17:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Óptica II",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "P",
+        "cuatrimestre": 0,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/practicas-externas-12712-12307-3-98417",
+        "examenes": [],
+        "grupo_seleccionado": {
+            "CLE": -1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [],
+        "nombre": "Prácticas externas",
+        "num_grupos": {
+            "CLE": -1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "Q",
+        "cuatrimestre": 2,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/quimica-12710-12305-11-78487",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-01T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-31T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "130",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "13:00:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Química",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "SFM",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/simulacion-fisica-materiales-12711-12306-3-78497",
+        "examenes": [
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-11T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-16T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Simulación en Física de Materiales",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "SS",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/superconductores-superfluidos-12711-12306-3-78500",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-24T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-21T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "12:00:00",
+                "hora_inicio": "10:30:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Superconductores y Superfluidos",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "TEI",
+        "cuatrimestre": 2,
+        "curso": 1,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/tecnicas-experimentales-12709-12304-11-78481",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-13T16:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-06-26T10:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "18:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Técnicas Experimentales I",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Formación básica"
+    },
+    {
+        "abreviatura": "TEII",
+        "cuatrimestre": 0,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/tecnicas-experimentales-ii-12709-12304-2-78482",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-27T16:00:00"
+            },
+            {
+                "aula": [
+                    "130",
+                    "(Informática)"
+                ],
+                "fecha": "2024-07-03T10:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "21:00:00",
+                "hora_inicio": "20:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "21:00:00",
+                "hora_inicio": "20:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "21:00:00",
+                "hora_inicio": "20:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "21:00:00",
+                "hora_inicio": "20:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "14:00:00",
+                "hora_inicio": "13:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "830",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "21:00:00",
+                "hora_inicio": "20:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Técnicas Experimentales II",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "TEIII",
+        "cuatrimestre": 0,
+        "curso": 3,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/tecnicas-experimentales-iii-12709-12304-2-78483",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-22T16:00:00"
+            },
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-28T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": -1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [],
+        "nombre": "Técnicas Experimentales III",
+        "num_grupos": {
+            "CLE": -1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "TEIV",
+        "cuatrimestre": 2,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/tecnicas-experimentales-iv-12709-12304-2-78484",
+        "examenes": [
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-24T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-13T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "Magna",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "20:30:00",
+                "hora_inicio": "19:30:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "Magna",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "20:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Técnicas Experimentales IV",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "TL",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/tecnologia-laser-12711-12306-3-78495",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-01-15T09:00:00"
+            },
+            {
+                "aula": [
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-13T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "13:30:00",
+                "hora_inicio": "12:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Tecnología del Láser",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "TCC",
+        "cuatrimestre": 1,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/teoria-cuantica-campos-12711-12306-3-78494",
+        "examenes": [
+            {
+                "aula": [
+                    "130",
+                    "(Informática)"
+                ],
+                "fecha": "2024-06-26T16:00:00"
+            },
+            {
+                "aula": [
+                    "2",
+                    "130"
+                ],
+                "fecha": "2024-01-12T16:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "C",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "C",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:30:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Teoría Cuántica de Campos",
+        "num_grupos": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Optativo"
+    },
+    {
+        "abreviatura": "TTC",
+        "cuatrimestre": 2,
+        "curso": 2,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/termodinamica-teoria-cinetica-12705-12300-2-78459",
+        "examenes": [
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "830"
+                ],
+                "fecha": "2024-07-02T09:00:00"
+            },
+            {
+                "aula": [
+                    "6",
+                    "0",
+                    "130",
+                    "830"
+                ],
+                "fecha": "2024-05-23T09:00:00"
+            }
+        ],
+        "grupo_seleccionado": {
+            "CLE": 1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [
+            {
+                "aula": "0",
+                "dia_semana": "Lunes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Lunes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Martes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Martes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Miércoles",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Miércoles",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Jueves",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Jueves",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "0",
+                "dia_semana": "Viernes",
+                "grupo": 1,
+                "hora_fin": "10:00:00",
+                "hora_inicio": "09:00:00",
+                "tipo": "CLE"
+            },
+            {
+                "aula": "6",
+                "dia_semana": "Viernes",
+                "grupo": 2,
+                "hora_fin": "17:00:00",
+                "hora_inicio": "16:00:00",
+                "tipo": "CLE"
+            }
+        ],
+        "nombre": "Termodinámica y Teoría Cinética",
+        "num_grupos": {
+            "CLE": 2,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    },
+    {
+        "abreviatura": "T",
+        "cuatrimestre": 0,
+        "curso": 4,
+        "enlace": "https://www.usc.gal/es/centro/facultad-fisica/horarios/materias/grado-12712-12307-2-78503",
+        "examenes": [],
+        "grupo_seleccionado": {
+            "CLE": -1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "horario": [],
+        "nombre": "Trabajo fin de grado",
+        "num_grupos": {
+            "CLE": -1,
+            "CLIL": -1,
+            "CLIS": -1
+        },
+        "tipo": "Obligatorio"
+    }
+]
