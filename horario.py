@@ -20,16 +20,35 @@ def materia(nombre: str):
     m = api.encontrar_materia(l, nombre)[0][0]
     return m
 
+def comprobar_semana():
+    global horario, semanas, primera_semana
+    with use_scope('aviso_cambio_semana', clear = True):
+        put_warning('Descargar los datos de una semana diferente lleva un tiempo, lo siento :c Cargando...')
+    for m in horario.materias.values():
+        if m.cuatrimestre != cuatrimestres[pin.cuatri]:
+            continue
+        if m.semana == '':
+            m.semana = primera_semana[pin.cuatri]
+        if m.semana != pin.semana:
+            m.semana = pin.semana
+            api.cambiar_semana(m)
+    with use_scope('aviso_cambio_semana', clear = True):
+        pass
+    api.actualizar_horario(horario)
+
 def refrescar_curso(e):
     global horario, cursos, cuatrimestres
     horario = api.horario_curso(cursos[e], cuatrimestres[pin.cuatri])
-    widget_grupos()
+    comprobar_semana()
+    widget_grupos(pin.semana)
     render()
 def refrescar_cuatri(e):
     global horario, cursos, cuatrimestres
     horario = api.horario_curso(cursos[pin.curso], cuatrimestres[e])
-    widget_grupos()
+    comprobar_semana()
+    widget_grupos(pin.semana)
     render()
+
 def refrescar_grupo(tipo):
     global horario, cursos
     def wrapper(e):
@@ -40,9 +59,17 @@ def refrescar_grupo(tipo):
         render()
     return wrapper
 
+def refrescar_semana(e):
+    global horario, semanas
+    comprobar_semana()
+    render()
+
 def incluir_materia():
-    global horario
-    api.incluir_en_horario(horario, materia(pin.buscar))
+    global horario, semanas
+    m = materia(pin.buscar)
+    api.incluir_en_horario(horario, m)
+    comprobar_semana()
+    widget_grupos()
     render()
 
 def cambiar_grupo_materia(nombre, tipo):
@@ -57,6 +84,7 @@ def eliminar_materia(nombre):
     global horario
     def wrapper():
         api.eliminar_de_horario(horario, nombre)
+        widget_grupos()
         render()
     return wrapper
 
@@ -83,6 +111,16 @@ def guardar():
     confirmar = actions('Horario guardado! Quieres abrirlo?', ['Si', 'No'], help_text = 'El horario se ha guardado en html y csv en la carpeta del programa. Si quieres imprimirlo puedes abrir el html y guardarlo como pdf')
     if confirmar == 'Si':
         webbrowser.open('file://' + os.path.realpath('horario.html'), new=2)
+
+def generar_semanas(lista):
+    global semanas, primera_semana
+    semanas = {}
+    primera_semana = {}
+    for m in lista:
+        if not 'Primero' in semanas and m.cuatrimestre == 1:
+            (semanas['Primero'], primera_semana['Primero']) = api.lista_semanas(m)
+        if not 'Segundo' in semanas and m.cuatrimestre == 2:
+            (semanas['Segundo'], primera_semana['Segundo']) = api.lista_semanas(m)
 
 # Widgets
 # ---
@@ -141,7 +179,7 @@ def elegir_grado():
     while not grado:
         pass
     
-    for n in api.generar_lista_materias('materias.json', url, grado):
+    for n in api.generar_lista_materias(url, grado):
         if 'ERROR' in n:
             with use_scope('error'):
                 put_error(f"Error obteniendo datos de '{n.split(' ')[1]}', inténtalo de nuevo más tarde")
@@ -154,9 +192,9 @@ def elegir_grado():
     remove('grado')
     remove('url')
 
-def widget_grupos():
+def widget_grupos(semana = None):
     with use_scope('seleccion_grupos', clear = True):
-        global horario
+        global horario, semanas
         num_grupos = { t: -1 for t in api.TipoClase }
         for m in horario.materias.values():
             for t in m.grupo_seleccionado:
@@ -166,11 +204,17 @@ def widget_grupos():
         for t in sorted(num_grupos.keys(), key = lambda x: api.tipo_clase_ch[x]):
             if num_grupos[t] < 1:
                 continue
-            select_grupo.append(None)
             select_grupo.append(put_select(f"grupo_{t.value}", options = list(range(1, num_grupos[t]+1)), value = 1, label = f"Grupo {t.value}"))
+            select_grupo.append(None)
             pin_on_change(f"grupo_{t.value}", refrescar_grupo(t), clear = True)
 
-        put_row(select_grupo[1:])
+        select_grupo.append(put_select('semana', options = semanas[pin.cuatri], label = 'Semana', value = semana))
+        pin_on_change('semana', refrescar_semana, clear = True)
+
+        put_row(select_grupo)
+    
+    with use_scope('aviso_cambio_semana', clear = True):
+        pass
 
 def widget_curso():
     global horario, cursos, cuatrimestres
@@ -201,11 +245,8 @@ def widget_buscar():
 
 def widget_bottom():
     with use_scope('bottom'):
-        put_row([
-            put_button('Guardar horario', onclick = guardar),
-            None,
-            put_button('Resetear o cambiar de grado', onclick = resetear)
-        ])
+        put_button('Guardar horario', onclick = guardar)
+        put_button('Resetear o cambiar de grado', onclick = resetear)
 
 # Display
 # ---
@@ -241,6 +282,7 @@ def main():
     set_env(output_max_width = '1000px')
 
     elegir_grado()
+    generar_semanas(api.lista_materias())
 
     global horario
     horario = api.horario_curso(1, 1)

@@ -59,6 +59,7 @@ class Materia:
     curso: int
     cuatrimestre: int
     tipo: TipoMateria
+    semana: str = ''
     grupo_seleccionado: dict[str, int] = field(default_factory=dict)
     num_grupos: dict[str, int] = field(default_factory=dict)
     horario: list[HoraClase] = field(default_factory=list)
@@ -93,7 +94,19 @@ def obtener_grados(url_base):
     return list(gr)
 
 # Crea una lista offline con todos los datos de las materias
-def generar_lista_materias(archivo: str, url_base, grado):
+def escribir_archivo(lista: list[Materia]):
+    def writer(o):
+        if isinstance(o, dt.datetime) or isinstance(o, dt.time):
+            return o.isoformat()
+        if isinstance(o, set):
+            return list(o)
+        return o.__dict__
+
+    f = open('materias.json', 'w')
+    f.write(json.dumps(lista, default = writer, sort_keys = True, indent = 4, ensure_ascii = False))
+    f.close()
+
+def generar_lista_materias(url_base, grado):
     print('Obteniendo lista de materias...')
     l = []
 
@@ -124,17 +137,8 @@ def generar_lista_materias(archivo: str, url_base, grado):
     for m in l:
         yield datos_materia(m)
         m = asdict(m)
-
-    def writer(o):
-        if isinstance(o, dt.datetime) or isinstance(o, dt.time):
-            return o.isoformat()
-        if isinstance(o, set):
-            return list(o)
-        return o.__dict__
-
-    f = open(archivo, 'w')
-    f.write(json.dumps(l, default = writer, sort_keys = True, indent = 4, ensure_ascii = False))
-    f.close()
+    
+    escribir_archivo(l)
 
 # Lee la lista generada de materias
 def lista_materias():
@@ -148,7 +152,77 @@ def lista_materias():
 
     return materias
 
+# Obtiene la lista de semanas del horario
+def lista_semanas(materia: Materia):
+    r = requests.get(materia.enlace)
+    soup = BeautifulSoup(r.text, 'html.parser')
+
+    selector_semana = soup.find(id = 'subject-detail-controller-week-filter')
+    semanas = selector_semana.findAll('li')
+
+    primera = ''
+    l = {}
+    for s in semanas:
+        s = s.find('a')
+        l[s.decode_contents()] = 'https://www.usc.gal' + s['href']
+        if primera == '':
+            primera = s.decode_contents()
+
+    return (l, primera)
+
 # Obtiene los horarios y fechas de exámen de una materia
+def horario_materia(soup):
+    tb_cl = soup.find('th', text=re.compile(f"[{'|'.join([e.value for e in DiaSemana])}]"))
+    if tb_cl:
+        grupo_max = { t.value: -1 for t in TipoClase }
+        l = []
+
+        for c in tb_cl.parent.parent.parent.findAll('tr'):
+            if c.find('th'):
+                dia = DiaSemana(c.find('th').text)
+                continue
+
+            tipo, grupo = c.find_all('td')[1].text.split(' ')[-1][1:].split('_')
+            if not tipo in set(i.value for i in TipoClase):
+                for t in TipoClase:
+                    if tipo in t.value:
+                        tipo = t
+                        break
+            tipo = TipoClase(tipo)
+            hora_inicio, hora_fin = list(map(lambda x: dt.datetime.strptime(x, '%H:%M').time(), c.find_all('td')[0].text.split('-')))
+            
+            l.append(HoraClase(
+                grupo = int(grupo),
+                dia_semana = dia,
+                hora_inicio = hora_inicio,
+                hora_fin = hora_fin,
+                aula = c.find_all('td')[2].text.split(' ')[-1],
+                tipo = tipo
+            ))
+
+            grupo_max[tipo.value] = max(grupo_max[tipo.value], int(grupo))
+
+        return (l, grupo_max)
+
+def examenes_materia(soup):
+    tb_ex = soup.find('caption', text=re.compile('Exámenes'))
+    if tb_ex:
+        l = []
+        for e in tb_ex.parent.findAll('tr', class_='target-items-selector'):
+            str_fecha, _ = e.find_all('td')[0].text.split('-')
+            fecha = dt.datetime.strptime(str_fecha, '%d.%m.%Y %H:%M')
+            aula = e.find_all('td')[2].text.split(' ')[-1]
+
+            examen = next(filter(lambda e: e.fecha == fecha, l), None)
+            if examen is None:
+                l.append(Examen(
+                    fecha = fecha,
+                    aula = {aula}
+                ))
+                continue
+            examen.aula.add(aula)
+        return l
+
 def datos_materia(materia: Materia):
     dia = DiaSemana.LUNES
 
@@ -158,55 +232,46 @@ def datos_materia(materia: Materia):
         r = requests.get(materia.enlace)
         soup = BeautifulSoup(r.text, 'html.parser')
 
-        tb_cl = soup.find('th', text=re.compile(f"[{'|'.join([e.value for e in DiaSemana])}]"))
-        if tb_cl:
-            grupo_max = { t.value: -1 for t in TipoClase }
-            for c in tb_cl.parent.parent.parent.findAll('tr'):
-                if c.find('th'):
-                    dia = DiaSemana(c.find('th').text)
-                    continue
+        horario = horario_materia(soup)
+        if horario:
+            materia.horario, materia.num_grupos = horario
+        examenes = examenes_materia(soup)
+        if examenes:
+            materia.examenes = examenes
 
-                tipo, grupo = c.find_all('td')[1].text.split(' ')[-1][1:].split('_')
-                if not tipo in set(i.value for i in TipoClase):
-                    for t in TipoClase:
-                        if tipo in t.value:
-                            tipo = t
-                            break
-                tipo = TipoClase(tipo)
-                hora_inicio, hora_fin = list(map(lambda x: dt.datetime.strptime(x, '%H:%M').time(), c.find_all('td')[0].text.split('-')))
-                
-                materia.horario.append(HoraClase(
-                    grupo = int(grupo),
-                    dia_semana = dia,
-                    hora_inicio = hora_inicio,
-                    hora_fin = hora_fin,
-                    aula = c.find_all('td')[2].text.split(' ')[-1],
-                    tipo = tipo
-                ))
+        for h in materia.horario:
+            materia.grupo_seleccionado[h.tipo.value] = 0 if materia.tipo == TipoMateria.OPTATIVO else 1
 
-                grupo_max[tipo.value] = max(grupo_max[tipo.value], int(grupo))
-                materia.grupo_seleccionado[tipo.value] = 0 if materia.tipo == TipoMateria.OPTATIVO else 1
-                materia.num_grupos[tipo.value] = grupo_max[tipo.value]
-                                                        
-        tb_ex = soup.find('caption', text=re.compile('Exámenes'))
-        if tb_ex:
-            for e in tb_ex.parent.findAll('tr', class_='target-items-selector'):
-                str_fecha, _ = e.find_all('td')[0].text.split('-')
-                fecha = dt.datetime.strptime(str_fecha, '%d.%m.%Y %H:%M')
-                aula = e.find_all('td')[2].text.split(' ')[-1]
-
-                examen = next(filter(lambda e: e.fecha == fecha, materia.examenes), None)
-                if examen is None:
-                    materia.examenes.append(Examen(
-                        fecha = fecha,
-                        aula = {aula}
-                    ))
-                    continue
-                examen.aula.add(aula)
         return materia.nombre
     except:
         print(f"Error al obtener datos de '{materia.nombre}'")
-        return f"ERROR {materia.nombre}"
+        return f"ERROR {materia.nombre}"""
+    
+# Cambia la semana del horario de una materia
+def cambiar_semana(materia: Materia):
+    print(f"cambiando semana de {materia.nombre} a '{materia.semana}'")
+    l, _ = lista_semanas(materia)
+    url = l[materia.semana]
+
+    data = "js=true&_drupal_ajax=1&ajax_page_state%5Btheme%5D=usc_theme&ajax_page_state%5Btheme_token%5D=&ajax_page_state%5Blibraries%5D=eu_cookie_compliance%2Feu_cookie_compliance_bare%2Cgoogle_analytics%2Fgoogle_analytics%2Csystem%2Fbase%2Cusc_services%2Fupdate-academic-course%2Cusc_theme%2Fbase-theme%2Cusc_theme%2Fcustom-theme%2Cusc_theme%2Forganization"
+    headers = {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Accept-Language": "es-ES,es;q=0.9",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-Requested-With": "XMLHttpRequest"
+    }
+
+    r = requests.post(url, data=data, headers=headers)
+
+    d = None
+    for e in r.json():
+        if e['command'] != 'insert' or e['selector'] != '#subject-detail-controller':
+            continue
+        d = e['data']
+
+    soup = BeautifulSoup(d, 'html.parser')
+
+    materia.horario, materia.num_grupos = horario_materia(soup)
 
 # Utiliza fuzzy matching para encontrar el nombre de una materia
 def encontrar_materia(materias: list[Materia], busqueda: str):
@@ -292,12 +357,12 @@ def formato_horario(horario: Horario):
     to_hex = lambda rgb: '#%02x%02x%02x' % tuple(map(lambda x: int(x*255), rgb))
     u_colors = {x: to_hex(color(i, len(u))) for i, x in enumerate(u)}
     
-    filtered = horario.df.dropna(how='all')
+    """filtered = horario.df.dropna(how='all')
     empty = horario.df.index.difference(filtered.index)
     empty = pd.to_datetime(empty, format='%H:%M').to_series()
     empty = empty.groupby(empty.diff().ne(pd.Timedelta('30min')).cumsum()).agg(['first', 'last'])
     empty['first'] = empty['first'] - pd.Timedelta('30min')
-    horario.df = filtered
+    horario.df = filtered"""
     
     def color(texto):
         if texto == '':
@@ -318,8 +383,8 @@ def formato_horario(horario: Horario):
             {'selector': '*', 'props': [('color', 'black'), ('text-align', 'center')]},
         ])
         styler.applymap(color, subset=pd.IndexSlice[:, ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes']])
-        if len(empty) > 0 and not empty['first'].iloc[0].strftime('%H:%M') < horario.df.index[0]:
-            styler.applymap(lambda x: 'border-bottom: 2px solid black', subset=pd.IndexSlice[empty['first'].dt.strftime('%H:%M'), :])
+        #if len(empty) > 0 and not empty['first'].iloc[0].strftime('%H:%M') < horario.df.index[0]:
+        #    styler.applymap(lambda x: 'border-bottom: 2px solid black', subset=pd.IndexSlice[empty['first'].dt.strftime('%H:%M'), :])
         return styler
 
     return horario.df.fillna('').style.pipe(make_pretty)
