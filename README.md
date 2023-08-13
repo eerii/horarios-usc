@@ -2,6 +2,8 @@
 
 Pequeña utilidad que escanea los horarios de la página oficial de la USC y permite organizar las asignaturas, ver cómo cuadran los distintos grupos y probar todas las combinaciones deseadas.
 
+https://github.com/josekoalas/horarios-usc/assets/22449369/ed177120-d904-4460-91fe-8d73611cfca0
+
 - Horarios completos por curso
 - Añadir o quitar asignaturas independientemente del curso
 - Cambio de grupo global o por cada asignatura
@@ -34,6 +36,8 @@ python horario.py
 5. Se debería de abrir una ventana en el navegador. Te pedirá que introduzcas la url de tu carrera. Vienen algunas por defecto pero si no es la página del centro, del estilo `https://www.usc.gal/es/centro/NOMBRE`
 
 6. Si todo va bien, debería de cargar los nombres de los grados ✨
+
+https://github.com/josekoalas/horarios-usc/assets/22449369/014ae040-7388-4a48-bcca-27b3bfc42bf4
  
 ### Problemas conocidos 🚧
 
