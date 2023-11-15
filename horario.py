@@ -204,7 +204,7 @@ def widget_grupos(semana = None):
         for t in sorted(num_grupos.keys(), key = lambda x: api.tipo_clase_ch[x]):
             if num_grupos[t] < 1:
                 continue
-            select_grupo.append(put_select(f"grupo_{t.value}", options = list(range(1, num_grupos[t]+1)), value = 1, label = f"Grupo {t.value}"))
+            select_grupo.append(put_select(f"grupo_{t.value}", options = list(range(0, num_grupos[t]+1)), value = 1, label = f"Grupo {t.value}"))
             select_grupo.append(None)
             pin_on_change(f"grupo_{t.value}", refrescar_grupo(t), clear = True)
 
@@ -262,7 +262,7 @@ def render():
                 if g == -1:
                     l.append(put_select(n, options = [ '-' ]))
                     continue
-                select = put_select(n, options = list(range(1 if tipo != api.TipoMateria.OPTATIVO else 0, num_grupos[t]+1)), value = g)
+                select = put_select(n, options = list(range(0 if tipo != api.TipoMateria.OPTATIVO else 0, num_grupos[t]+1)), value = g)
                 pin_on_change(n, cambiar_grupo_materia(nombre, t), clear = True)
                 l.append(select)
             l.append(put_button('X', onclick = eliminar_materia(nombre)))
